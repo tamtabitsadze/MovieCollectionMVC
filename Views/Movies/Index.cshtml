@@ -1,0 +1,40 @@
+@model IEnumerable<MovieCollectionMVC.Models.Movie>
+
+<div class="page-header">
+    <div>
+        <p class="subtitle">MVC Project</p>
+        <h1>Movie Collection</h1>
+        <p class="description">Manage your favorite movies.</p>
+    </div>
+
+    <a class="btn-main" asp-controller="Movies" asp-action="Create">
+        + Add New Movie
+    </a>
+</div>
+
+<div class="movie-card">
+    <table class="movie-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Director</th>
+                <th>Rating</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in Model)
+            {
+                <tr>
+                    <td>@movie.Title</td>
+                    <td>@movie.Director</td>
+                    <td>@movie.Rating</td>
+                    <td>
+                        <a class="btn-edit" asp-action="Edit" asp-route-id="@movie.Id">Edit</a>
+                        <a class="btn-delete" asp-action="Delete" asp-route-id="@movie.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

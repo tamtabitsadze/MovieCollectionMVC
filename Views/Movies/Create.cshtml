@@ -1,0 +1,31 @@
+@model MovieCollectionMVC.Models.Movie
+
+<div class="form-wrapper">
+    <div class="form-card">
+
+        <p class="subtitle">MVC PROJECT</p>
+        <h1>Add Movie</h1>
+
+        <form asp-action="Create" method="post">
+
+            <label>Title</label>
+            <input asp-for="Title" />
+
+            <label>Director</label>
+            <input asp-for="Director" />
+
+            <label>Rating</label>
+            <input asp-for="Rating" type="number" />
+
+            <button class="btn-main" type="submit">
+                Save Movie
+            </button>
+
+            <a asp-action="Index" class="btn-back">
+                Back
+            </a>
+
+        </form>
+
+    </div>
+</div>
